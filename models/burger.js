@@ -6,7 +6,6 @@ var burger = {
       cb(res);
     });
   }
-
 };
 
 module.exports = burger;
