@@ -1,9 +1,18 @@
 var connection = require("../config/connection.js");
 
-// Select All
+var orm = {
+  // Select All
+  all: function(table,cb) {
+    var queryString = "SELECT * FROM " + table + ";";
+    connection.query(queryString, function(err, result) {
+      if (err) throw err;
+      cb(result);
+    });
+  }
+  // Insert One
 
-// Insert One
-
-// Update One
+  // Update One
+  
+};
 
 module.exports = orm;
