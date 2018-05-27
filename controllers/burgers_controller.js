@@ -7,12 +7,24 @@ var burger = require("../models/burger.js");
 
 router.get("/", function(req, res) {
   burger.all(function(data) {
-    var testObject = {
+    var burgerObject = {
       burgers: data
     }
-
-    res.render("index", testObject);
+    console.log(burgerObject);
+    res.render("index", burgerObject);
   });
 });
+
+// router.post("/api/burgers", function(req, res) {
+//   burger.create([
+//     "burger_name"
+//   ], [
+//     req.body.burger_name
+//   ], function(result) {
+
+//     res.json({ id: result.insertId });
+//     // result.insertId is the id in the DB
+//   });
+// })
 
 module.exports = router;
