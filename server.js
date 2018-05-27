@@ -30,3 +30,6 @@ app.listen(PORT, function() {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
+
+// Fuuuuuck somewhere I am building a URL but I can't find it
+// Restarting cmd + a then delete.....
