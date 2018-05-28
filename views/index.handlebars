@@ -1,7 +1,27 @@
 <h1>Eat The Burger</h1>
 
-<h2>Burgers Devoured</h2>
 {{!-- Display burgers that have been devoured (devoured === true) --}}
+<h2>Burgers Devoured</h2>
 
-<h2>Burgers NOT Devoured</h2>
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      <li>
+        <p>{{burger_name}}</p>
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
+
 {{!-- Display burgers that have NOT been devoured (devoured === false) --}}
+<h2>Burgers NOT Devoured</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+    <li>
+      <p>{{burger_name}}</p>
+    </li>
+    {{/unless}}
+  {{/each}}
+</ul>
