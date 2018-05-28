@@ -7,13 +7,13 @@ var burger = {
     });
   },
 
-  // create: function(cb) {
-  //   orm.create("burgers", col, val, function(res) {
-  //     // col is the column name (burger_name)
-  //     // val is the value that was inserted by user
-  //     cb(res);
-  //   });
-  // }
+  create: function(cols, vals, cb) {
+    orm.create("burgers", cols, vals, function(res) {
+      // col is the column name (burger_name)
+      // val is the value that was inserted by user
+      cb(res);
+    });
+  }
 };
 
 module.exports = burger;

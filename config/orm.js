@@ -49,11 +49,13 @@ var orm = {
     });
   },
   // Insert One
-  // create: function(table, col, val, cb) {
-  //   var queryString = "INSERT INTO " + table + " (" + col + ") " + "VALUES " + "( " + val + ")";
-
-  //   console.log(queryString);
-  // }
+  create: function(table, cols, vals, cb) {
+    var queryString = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + printQuestionMarks(vals.length) + ") ";
+    connection.query(queryString, vals, function(err, result) {
+      if (err) throw err;
+      cb(result);
+    });
+  }
   // Update One
   
 };

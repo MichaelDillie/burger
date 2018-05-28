@@ -10,21 +10,20 @@ router.get("/", function(req, res) {
     var burgerObject = {
       burgers: data
     }
-    console.log(burgerObject);
+    // console.log(burgerObject);
     res.render("index", burgerObject);
   });
 });
 
-// router.post("/api/burgers", function(req, res) {
-//   burger.create([
-//     "burger_name"
-//   ], [
-//     req.body.burger_name
-//   ], function(result) {
-
-//     res.json({ id: result.insertId });
-//     // result.insertId is the id in the DB
-//   });
-// })
+router.post("/burgers", function(req, res) {
+  burger.create([
+    "burger_name"
+  ], [
+    req.body.burger_name
+  ], function(result) {
+    // Redirecting back to home
+    res.redirect("/");
+  });
+})
 
 module.exports = router;
