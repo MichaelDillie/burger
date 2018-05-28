@@ -2,12 +2,11 @@
 
 {{!-- Display burgers that have been devoured (devoured === true) --}}
 <h2>Burgers Devoured</h2>
-
 <ul>
   {{#each burgers}}
-    {{#if devoured}}
+    {{#if this.devoured}}
       <li>
-        <p>{{burger_name}}</p>
+        <p>{{this.burger_name}}</p>
       </li>
     {{/if}}
   {{/each}}
@@ -15,12 +14,16 @@
 
 {{!-- Display burgers that have NOT been devoured (devoured === false) --}}
 <h2>Burgers NOT Devoured</h2>
-
 <ul>
   {{#each burgers}}
-    {{#unless devoured}}
+    {{#unless this.devoured}}
     <li>
-      <p>{{burger_name}}</p>
+      <p>
+        <form action="/burgers/{{this.id}}" method="PUT">
+          {{this.burger_name}}
+          <button type="submit">Devoure</button>
+        </form>
+      </p>
     </li>
     {{/unless}}
   {{/each}}

@@ -13,6 +13,12 @@ var burger = {
       // val is the value that was inserted by user
       cb(res);
     });
+  },
+
+  update: function(objColVals, condition, cb) {
+    orm.update("burgers", objColVals, condition, function(res) {
+      cb(res);
+    });
   }
 };
 
