@@ -1,3 +1,50 @@
+body {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  background: #F4CE3D;
+}
+
+/* TITLES */
 .page-title {
   text-align: center;
+  font-weight: 700;
+  font-size: 3.5em;
+  color: #14242b;
+}
+.left-side-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 3em;
+  color: #14242b;
+}
+.right-side-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 3em;
+  color: #14242b;
+}
+.add-burger-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 3em;
+  color: #14242b;
+}
+
+/* DATA */
+li {
+  text-align: center;
+  font-size: 1.5em;
+  color: #14242b;
+  margin: 10px 0px;
+}
+.not-devoured {
+  margin-right: 20px;
+}
+
+.btn {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1.2em;
+  background-color: #00B8A0;
+}
+#name {
+  color: #14242b;
 }
