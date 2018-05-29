@@ -22,7 +22,7 @@
                 <p>
                   <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
                     {{this.burger_name}}
-                      <button class="btn waves-effect waves-light" type="submit" name="action">Devoure</button>
+                      <button class="btn waves-effect waves-light" type="submit">Devoure</button>
                   </form>
                 </p>
               </li>
@@ -55,43 +55,22 @@
   </div>
   {{!-- END BURGER CONTENT ROW --}}
 
-</main>
+  {{!-- ADD BURGER --}}
+  <div class="row">
+    {{!-- ADD BURGER TITLE --}}
+    <header class="row">
+      <div class="col m12 add-burger-title">Add A Burger</div>
+    </header>
+    {{!-- ADD BURGER FORM --}}
+    <div class="row">
+      <form action="/burgers" method="POST">
+        <div class="input-field col s12">
+          <input placeholder="Burger Name" id="name" name="burger_name" type="text">
+        </div>
+        <button class="btn waves-effect waves-light" type="submit">Add Burger</button>
+      </form>
+    </div>
 
-
-
-{{!-- <ul>
-  {{#each burgers}}
-    {{#if this.devoured}}
-      <li>
-        <p>{{this.burger_name}}</p>
-      </li>
-    {{/if}}
-  {{/each}}
-</ul> --}}
-
-
-{{!-- <ul>
-  {{#each burgers}}
-    {{#unless this.devoured}}
-    <li>
-      <p>
-        <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-          {{this.burger_name}}
-          <button type="submit">Devoure</button>
-        </form>
-      </p>
-    </li>
-    {{/unless}}
-  {{/each}}
-</ul> --}}
-
-<h2>Add A Burger</h2>
-<form class="form" action="/burgers" method="POST">
-
-  <div>
-    <input type="text" id="name" name="burger_name" placeholder="Burger Name">
   </div>
 
-  <button type="submit" class="burger-button">Add A Burger</button>
-
-</form>
+</main>
