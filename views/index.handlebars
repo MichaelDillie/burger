@@ -1,8 +1,65 @@
-<h1>Eat The Burger</h1>
+<main class="container">
+  {{!-- HEADDER --}}
+  <header class="row">
+    <div class="col m12 page-title">Eat The Burger</div>
+  </header>
 
-{{!-- Display burgers that have been devoured (devoured === true) --}}
-<h2>Burgers Devoured</h2>
-<ul>
+  {{!-- BURGER CONTENT --}}
+  <div class="row">
+
+    {{!-- LEFT SIDE OF BURGER CONTENT --}}
+    <div class="col m6 left-side">
+      {{!-- LEFT SIDE TITLE --}}
+      <header class="row">
+        <div class="col m12 left-side-title">Burgers To Devoure</div>
+      </header>
+      {{!-- LEFT SIDE DATA --}}
+      <div class="row"> 
+        <ul class="row">
+          {{#each burgers}}
+            {{#unless this.devoured}}
+              <li class="col m12">
+                <p>
+                  <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+                    {{this.burger_name}}
+                      <button class="btn waves-effect waves-light" type="submit" name="action">Devoure</button>
+                  </form>
+                </p>
+              </li>
+            {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+    {{!-- RIGHT SIDE OF BURGER CONTENT --}}
+    <div class="col m6 right-side">
+      {{!-- RIGHT SIDE TITLE --}}
+      <header class="row">
+        <div class="col m12 right-side-title">Devoured Burgers</div>
+      </header>
+      {{!-- RIGHT SIDE DATA --}}
+      <div class="row">
+        <ul class="row">
+          {{#each burgers}}
+            {{#if this.devoured}}
+              <li class="col m12">
+                <p>{{this.burger_name}}</p>
+              </li>
+            {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  {{!-- END BURGER CONTENT ROW --}}
+
+</main>
+
+
+
+{{!-- <ul>
   {{#each burgers}}
     {{#if this.devoured}}
       <li>
@@ -10,11 +67,10 @@
       </li>
     {{/if}}
   {{/each}}
-</ul>
+</ul> --}}
 
-{{!-- Display burgers that have NOT been devoured (devoured === false) --}}
-<h2>Burgers NOT Devoured</h2>
-<ul>
+
+{{!-- <ul>
   {{#each burgers}}
     {{#unless this.devoured}}
     <li>
@@ -27,7 +83,7 @@
     </li>
     {{/unless}}
   {{/each}}
-</ul>
+</ul> --}}
 
 <h2>Add A Burger</h2>
 <form class="form" action="/burgers" method="POST">
