@@ -19,7 +19,7 @@
     {{#unless this.devoured}}
     <li>
       <p>
-        <form action="/burgers/{{this.id}}" method="PUT">
+        <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
           {{this.burger_name}}
           <button type="submit">Devoure</button>
         </form>
